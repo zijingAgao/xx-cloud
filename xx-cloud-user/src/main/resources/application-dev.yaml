@@ -1,0 +1,5 @@
+spring:
+  config:
+    import:
+      - nacos:xx-cloud-infra-dev.yaml
+      - nacos:xx-cloud-user-dev.yaml

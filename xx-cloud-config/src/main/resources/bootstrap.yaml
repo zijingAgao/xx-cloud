@@ -1,0 +1,13 @@
+spring:
+  profiles:
+    active: dev
+
+  cloud:
+    nacos:
+      config:
+        # Nacos服务器地址
+        server-addr: localhost:8848
+        # 命名空间
+        namespace: public
+        # 配置文件所在的分组
+        group: DEFAULT_GROUP
