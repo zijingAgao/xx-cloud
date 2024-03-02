@@ -23,6 +23,8 @@
         <module>xx-cloud-config</module>
         <module>xxl-job-admin</module>
         <module>xxl-job-executor</module>
+        <module>xx-cloud-amqp</module>
+        <module>xx-cloud-order</module>
     </modules>
     <properties>
         <java.version>8</java.version>

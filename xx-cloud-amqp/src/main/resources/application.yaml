@@ -1,0 +1,24 @@
+server:
+  port: 9005
+
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: admin
+    password: admin
+    template:
+      retry:
+        enabled: true
+        initial-interval: 2s
+    virtual-host: /
+    listener:
+      simple:
+        # 每个队列启动的消费者数量
+        concurrency: 1
+        # 每个队列最大的消费者数量
+        max-concurrency: 1
+        # 手动签收ACK
+        acknowledge-mode: manual
+        # 每次从RabbitMQ获取的消息数量
+        prefetch: 1
