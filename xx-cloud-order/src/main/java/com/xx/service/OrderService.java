@@ -5,12 +5,16 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.xx.config.RabbitMQConfig;
 import com.xx.entity.Order;
 import com.xx.enums.OrderStatus;
+import com.xx.repo.OrderRepository;
+import com.xx.ro.OrderRo;
 import com.xx.ro.PreOrderRo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -22,6 +26,22 @@ import java.util.UUID;
 public class OrderService {
   @Autowired private AmqpTemplate amqpTemplate;
   @Autowired private ObjectMapper objectMapper;
+  @Autowired private OrderRepository orderRepository;
+
+  // 条件查询
+  public List<Order> findCondition(OrderRo ro) {
+    return orderRepository.findByCondition(ro);
+  }
+
+  // 分页条件查询
+  public Page<Order> pageFind(OrderRo ro) {
+    return orderRepository.pageFindByCondition(ro);
+  }
+
+  // 查单个
+  public Order findOne(String id) {
+    return orderRepository.findById(id).orElse(null);
+  }
 
   // 订单生产者
   public void preOrder(PreOrderRo ro) throws JsonProcessingException {

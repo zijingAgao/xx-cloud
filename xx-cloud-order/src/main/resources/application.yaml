@@ -1,0 +1,6 @@
+server:
+  port: 9006
+
+spring:
+  application:
+    name: xx-cloud-order
