@@ -6,10 +6,11 @@
     <parent>
         <groupId>com.xx</groupId>
         <artifactId>xx-cloud</artifactId>
-        <version>1.0.0</version>
+        <version>${xx-cloud-verison}</version>
     </parent>
 
     <artifactId>xx-cloud-admin</artifactId>
+    <version>${admin.version}</version>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>

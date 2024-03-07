@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.xx</groupId>
     <artifactId>xx-cloud</artifactId>
-    <version>1.0.0</version>
+    <version>${xx-cloud-verison}</version>
     <packaging>pom</packaging>
     <name>xx-cloud</name>
     <description>xx-cloud</description>
@@ -26,7 +26,18 @@
         <module>xx-cloud-amqp</module>
         <module>xx-cloud-order</module>
     </modules>
+
     <properties>
+        <xx-cloud-verison>1.0.0</xx-cloud-verison>
+        <!--模块版本号-->
+        <infra.version>1.0.0</infra.version>
+        <admin.version>1.0.0</admin.version>
+        <ampq.version>1.0.0</ampq.version>
+        <gateway.version>1.0.0</gateway.version>
+        <order.version>1.0.0</order.version>
+        <user.version>1.0.0</user.version>
+
+        <!--依赖版本号-->
         <java.version>8</java.version>
         <!--CloudAlibaba 2021.0.4.0	 SpringCloud 2021.0.4	SpringBoot 2.6.11-->
         <!--CloudAlibaba 2021.0.5.0	 SpringCloud 2021.0.5	SpringBoot 2.6.13-->

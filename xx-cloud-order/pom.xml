@@ -6,7 +6,7 @@
     <parent>
         <groupId>com.xx</groupId>
         <artifactId>xx-cloud</artifactId>
-        <version>1.0.0</version>
+        <version>${xx-cloud-verison}</version>
     </parent>
 
     <artifactId>xx-cloud-order</artifactId>
@@ -17,6 +17,11 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <dependencies>
+        <dependency>
+            <groupId>com.xx</groupId>
+            <artifactId>xx-cloud-infra</artifactId>
+            <version>1.0.0</version>
+        </dependency>
         <dependency>
             <groupId>com.xx</groupId>
             <artifactId>xx-cloud-amqp</artifactId>

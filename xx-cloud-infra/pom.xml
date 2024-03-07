@@ -6,10 +6,11 @@
     <parent>
         <groupId>com.xx</groupId>
         <artifactId>xx-cloud</artifactId>
-        <version>1.0.0</version>
+        <version>${xx-cloud-verison}</version>
     </parent>
 
     <artifactId>xx-cloud-infra</artifactId>
+    <version>${infra.version}</version>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -66,7 +67,11 @@
             <groupId>org.redisson</groupId>
             <artifactId>redisson-spring-boot-starter</artifactId>
         </dependency>
-
+        <!--openfeign-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
 
         <!--lombok -->
         <dependency>
