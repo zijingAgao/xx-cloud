@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.xx</groupId>
     <artifactId>xx-cloud</artifactId>
-    <version>${xx-cloud-verison}</version>
+    <version>1.0.0</version>
     <packaging>pom</packaging>
     <name>xx-cloud</name>
     <description>xx-cloud</description>
@@ -28,6 +28,7 @@
     </modules>
 
     <properties>
+        <!-- 暂时废弃，maven 打包不支持变量-->
         <xx-cloud-verison>1.0.0</xx-cloud-verison>
         <!--模块版本号-->
         <infra.version>1.0.0</infra.version>
