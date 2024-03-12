@@ -10,6 +10,11 @@
     </parent>
 
     <artifactId>xx-cloud-order</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>order-feign</module>
+        <module>order-web</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
