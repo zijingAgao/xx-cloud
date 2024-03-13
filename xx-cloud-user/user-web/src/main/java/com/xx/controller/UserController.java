@@ -24,7 +24,7 @@ public class UserController {
 
   @ApiOperation(value = "获取用户信息")
   @GetMapping("/{id}")
-  public String findOne(@PathVariable String id) {
+  public String findOne(@PathVariable("id") String id) {
     return id;
   }
 
