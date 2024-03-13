@@ -15,13 +15,8 @@ import org.springframework.web.bind.annotation.*;
 public class OrderController {
   @Autowired private OrderService orderService;
 
-  @PostMapping("/order")
+  @PostMapping("/pre/order")
   public void preOrder(@RequestBody PreOrderRo ro) throws JsonProcessingException {
     orderService.delayPreOrder(ro);
-  }
-
-  @PostMapping("/order/pay/{id}")
-  public void paySuccess(@PathVariable("id") String id) {
-//    orderService.paySuccess(id);
   }
 }

@@ -1,15 +1,12 @@
 package com.xx.controller;
 
-import com.xx.entity.Order;
-import com.xx.feign.OrderClient;
+import com.xx.resp.CommResp;
+import com.xx.ro.PreOrderRo;
+import com.xx.service.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author Agao
@@ -19,8 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/user")
 public class UserController {
-  @Autowired
-  private OrderClient orderClient;
+  @Autowired private UserService userService;
 
   @ApiOperation(value = "获取用户信息")
   @GetMapping("/{id}")
@@ -28,9 +24,10 @@ public class UserController {
     return id;
   }
 
-  @ApiOperation(value = "分页查用户订单")
-  @GetMapping("/user/order")
-  public Page<Order> test() {
-    return orderClient.pageFind(null);
+  @ApiOperation(value = "下预定单")
+  @PostMapping("/pre/order")
+  public CommResp<?> preOrder(@RequestBody PreOrderRo ro) {
+    userService.preOrder(ro);
+    return CommResp.success();
   }
 }

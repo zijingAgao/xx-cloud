@@ -1,10 +1,8 @@
 package com.xx.feign;
 
-import com.xx.entity.Order;
-import com.xx.ro.OrderRo;
+import com.xx.ro.PreOrderRo;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.data.domain.Page;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * 订单服务openFeign客户端
@@ -13,8 +11,9 @@ import org.springframework.web.bind.annotation.GetMapping;
  * @date 2024/3/7 16:17
  */
 @FeignClient("xx-cloud-order")
+// @RequestMapping("/api")
 public interface OrderClient {
-
-  @GetMapping("/page")
-  Page<Order> pageFind(OrderRo ro);
+  @PostMapping("/api/pre/order")
+  //  @RequestMapping(value = "/pre/order", method = RequestMethod.POST)
+  void preOrder(@RequestBody PreOrderRo ro);
 }

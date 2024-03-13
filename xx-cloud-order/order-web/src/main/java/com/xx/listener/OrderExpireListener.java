@@ -4,6 +4,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.rabbitmq.client.Channel;
 import com.xx.config.RabbitMQConfig;
 import com.xx.entity.Order;
+import java.io.IOException;
+import java.util.Map;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
@@ -12,9 +14,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.Headers;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Component;
-
-import java.io.IOException;
-import java.util.Map;
 
 /**
  * @author Agao
@@ -25,9 +24,17 @@ import java.util.Map;
 public class OrderExpireListener {
   @Autowired private ObjectMapper objectMapper;
 
-  // 设置订单失效的队列
+  /**
+   * 死信队列
+   *
+   * @param orderMsg
+   * @param message
+   * @param headers
+   * @param channel
+   * @throws IOException
+   */
   @RabbitListener(queues = RabbitMQConfig.DEAL_QUEUE_ORDER)
-  public void process(
+  public void orderExpireDeadQueue(
       @Payload String orderMsg,
       Message message,
       @Headers Map<String, Object> headers,
@@ -43,14 +50,22 @@ public class OrderExpireListener {
     channel.basicAck(deliveryTag, false);
   }
 
-
+  /**
+   * 延时队列
+   *
+   * @param orderMsg
+   * @param message
+   * @param headers
+   * @param channel
+   * @throws IOException
+   */
   @RabbitListener(queues = RabbitMQConfig.DELAY_QUEUE)
-  public void cancelOrder(
-          @Payload String orderMsg,
-          Message message,
-          @Headers Map<String, Object> headers,
-          Channel channel)
-          throws IOException {
+  public void orderExpireDelayQueue(
+      @Payload String orderMsg,
+      Message message,
+      @Headers Map<String, Object> headers,
+      Channel channel)
+      throws IOException {
     Order order = objectMapper.readValue(orderMsg, Order.class);
     log.info("order pay expire [delay] :{}", order);
     // 判断订单是否支付，做未支付的业务处理

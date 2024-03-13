@@ -1,18 +1,12 @@
+server:
+  port: 9001
+
 spring:
   application:
     name: xx-cloud-user
-  cloud:
-    nacos:
-      config:
-        #nacos中心地址
-        server-addr: 127.0.0.1:8848
-        # 配置文件格式
-        file-extension: yaml
 
   profiles:
-    active: dev
+    include:
+      - xx-cloud-infra
 
-  config:
-    import:
-      - nacos:xx-cloud-infra.yaml
-      - nacos:xx-cloud-user.yaml
+

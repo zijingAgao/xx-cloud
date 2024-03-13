@@ -11,6 +11,7 @@ import java.math.BigDecimal;
 @Data
 public class PreOrderRo {
     private String id;
+    private String uid;
     private BigDecimal price;
     private Long createDate;
     private Long payDate;

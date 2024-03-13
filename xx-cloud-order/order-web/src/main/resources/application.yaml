@@ -1,6 +1,10 @@
 server:
-  port: 9006
+  port: 9002
 
 spring:
   application:
     name: xx-cloud-order
+
+  profiles:
+    include:
+      - xx-cloud-infra

@@ -8,14 +8,13 @@ import com.xx.enums.OrderStatus;
 import com.xx.repo.OrderRepository;
 import com.xx.ro.OrderRo;
 import com.xx.ro.PreOrderRo;
+import java.util.List;
+import java.util.UUID;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
-import java.util.UUID;
 
 /**
  * @author Agao
@@ -48,6 +47,7 @@ public class OrderService {
     log.info("生成预订单----orderId: {}", ro.getId());
     Order order = new Order();
     order.setId(UUID.randomUUID().toString());
+    order.setUid(ro.getUid());
     order.setPrice(ro.getPrice());
     order.setStatus(OrderStatus.WAIT_PAY.getCode());
     order.setCreateDate(System.currentTimeMillis());
@@ -70,9 +70,13 @@ public class OrderService {
     log.info("生成延迟预订单----orderId: {}", ro.getId());
     Order order = new Order();
     order.setId(ro.getId());
+    order.setUid(ro.getUid());
     order.setPrice(ro.getPrice());
     order.setStatus(OrderStatus.WAIT_PAY.getCode());
     order.setCreateDate(System.currentTimeMillis());
+
+    // 入库
+    orderRepository.save(order);
 
     // 投递消息
     amqpTemplate.convertAndSend(
