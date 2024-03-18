@@ -14,6 +14,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
@@ -26,7 +27,8 @@ import org.springframework.util.StringUtils;
 public class AwdbCache {
   @Autowired private ObjectMapper objectMapper;
 
-  private static final String AWDB_PATH = "/";
+  @Value("${xx-cloud.ip-addr.awdb.path:}")
+  private String AWDB_PATH = "";
 
   /** awdb文件名字 */
   private static final String AWDB_FILENAME = "IP_city_single_WGS84_en.awdb";
