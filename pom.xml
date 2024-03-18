@@ -25,6 +25,7 @@
         <module>xxl-job-executor</module>
         <module>xx-cloud-amqp</module>
         <module>xx-cloud-order</module>
+        <module>xx-cloud-ip-addr</module>
     </modules>
 
     <properties>

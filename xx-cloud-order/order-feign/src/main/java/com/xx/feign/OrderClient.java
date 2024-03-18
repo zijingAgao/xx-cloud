@@ -11,9 +11,7 @@ import org.springframework.web.bind.annotation.*;
  * @date 2024/3/7 16:17
  */
 @FeignClient("xx-cloud-order")
-// @RequestMapping("/api")
 public interface OrderClient {
   @PostMapping("/api/pre/order")
-  //  @RequestMapping(value = "/pre/order", method = RequestMethod.POST)
   void preOrder(@RequestBody PreOrderRo ro);
 }
