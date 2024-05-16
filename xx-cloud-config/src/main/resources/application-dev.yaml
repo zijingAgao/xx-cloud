@@ -1,4 +1,0 @@
-spring:
-  config:
-    import:
-      - nacos:${spring.application.name}-dev.yaml

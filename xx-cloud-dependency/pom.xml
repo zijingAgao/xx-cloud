@@ -1,0 +1,119 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.xx</groupId>
+    <artifactId>xx-cloud-dependency</artifactId>
+    <name>xx-cloud-dependency</name>
+    <version>${revision}</version>
+    <packaging>pom</packaging>
+
+    <properties>
+        <spring.boot.version>2.6.13</spring.boot.version>
+        <!--CloudAlibaba 2021.0.4.0	 SpringCloud 2021.0.4	SpringBoot 2.6.11-->
+        <!--CloudAlibaba 2021.0.5.0	 SpringCloud 2021.0.5	SpringBoot 2.6.13-->
+        <spring.cloud.version>2021.0.5</spring.cloud.version>
+        <spring.cloud.alibaba.version>2021.0.5.0</spring.cloud.alibaba.version>
+        <redisson.version>3.25.2</redisson.version>
+        <lombok.version>1.18.30</lombok.version>
+        <guava.version>33.0.0-jre</guava.version>
+        <swagger.version>3.0.0</swagger.version>
+        <knife4j.version>3.0.2</knife4j.version>
+        <xxl-job.version>2.4.0</xxl-job.version>
+        <mysql-java.version>8.0.33</mysql-java.version>
+        <mybatis-plus.version>3.3.2</mybatis-plus.version>
+        <flatten-maven-plugin.version>1.5.0</flatten-maven-plugin.version>
+        <hutool-all.version>5.8.26</hutool-all.version>
+        <revision>1.0.0</revision>
+    </properties>
+
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!--spring-cloud-dependencies -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring.cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!--spring-cloud-alibaba-->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring.cloud.alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!--redisson -->
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson-spring-boot-starter</artifactId>
+                <version>${redisson.version}</version>
+            </dependency>
+            <!--lombok -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+            <!--guava -->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+            <!--swagger-->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-boot-starter</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+            <!--knife4j：swagger3.0 UI-->
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-spring-boot-starter</artifactId>
+                <version>${knife4j.version}</version>
+            </dependency>
+            <!--xxl-job-->
+            <dependency>
+                <groupId>com.xuxueli</groupId>
+                <artifactId>xxl-job-core</artifactId>
+                <version>${xxl-job.version}</version>
+            </dependency>
+            <!--mysql-->
+            <dependency>
+                <groupId>com.mysql</groupId>
+                <artifactId>mysql-connector-j</artifactId>
+                <version>${mysql-java.version}</version>
+            </dependency>
+            <!--mybatis-plus -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool-all.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-system</artifactId>
+                <version>${hutool-all.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+
+</project>

@@ -6,7 +6,7 @@
     <parent>
         <groupId>com.xx</groupId>
         <artifactId>xx-cloud</artifactId>
-        <version>1.0.0</version>
+        <version>${revision}</version>
     </parent>
 
     <artifactId>xx-cloud-user</artifactId>
@@ -26,7 +26,7 @@
         <dependency>
             <groupId>com.xx</groupId>
             <artifactId>xx-cloud-infra</artifactId>
-            <version>1.0.0</version>
+            <version>${revision}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -40,7 +40,7 @@
         <dependency>
             <groupId>com.xx</groupId>
             <artifactId>order-feign</artifactId>
-            <version>1.0.0</version>
+            <version>${revision}</version>
         </dependency>
     </dependencies>
 

@@ -6,7 +6,7 @@
     <parent>
         <groupId>com.xx</groupId>
         <artifactId>xx-cloud-user</artifactId>
-        <version>1.0.0</version>
+        <version>${revision}</version>
     </parent>
 
     <artifactId>user-web</artifactId>
@@ -21,7 +21,7 @@
         <dependency>
             <groupId>com.xx</groupId>
             <artifactId>user-feign</artifactId>
-            <version>1.0.0</version>
+            <version>${revision}</version>
         </dependency>
     </dependencies>
 
