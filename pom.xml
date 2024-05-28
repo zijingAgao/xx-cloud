@@ -21,6 +21,8 @@
         <module>xx-cloud-order</module>
         <module>xx-cloud-dependency</module>
         <module>xx-cloud-common</module>
+        <module>xx-cloud-util</module>
+
     </modules>
 
     <properties>

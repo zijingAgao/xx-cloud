@@ -1,6 +1,6 @@
 package com.xx.controller;
 
-import com.xx.resp.CommResp;
+import com.xx.resp.R;
 import com.xx.ro.PreOrderRo;
 import com.xx.service.UserService;
 import io.swagger.annotations.Api;
@@ -26,8 +26,8 @@ public class UserController {
 
   @ApiOperation(value = "下预定单")
   @PostMapping("/pre/order")
-  public CommResp<?> preOrder(@RequestBody PreOrderRo ro) {
+  public R<?> preOrder(@RequestBody PreOrderRo ro) {
     userService.preOrder(ro);
-    return CommResp.success();
+    return R.success();
   }
 }

@@ -14,6 +14,11 @@
     <modules>
         <module>xx-cloud-amqp</module>
         <module>xx-cloud-ip-addr</module>
+        <module>xx-cloud-ws</module>
+        <module>xx-cloud-redis</module>
+        <module>xx-cloud-kafka</module>
+        <module>xx-cloud-ws-diy</module>
+        <module>xx-cloud-mongo</module>
     </modules>
 
 </project>
