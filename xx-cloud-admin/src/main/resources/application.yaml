@@ -1,0 +1,7 @@
+server:
+  port: 9012
+
+
+spring:
+  application:
+    name: xx-cloud-admin

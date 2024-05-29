@@ -1,8 +1,8 @@
 package com.xx.config;
 
 import com.google.common.collect.Sets;
+import java.util.Arrays;
 import java.util.List;
-import org.assertj.core.util.Lists;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
@@ -38,12 +38,12 @@ public class SwaggerAddition implements ApiListingScannerPlugin {
             .responses(Sets.newHashSet(new ResponseBuilder().code("200").description("OK").build()))
             .consumes(Sets.newHashSet(MediaType.MULTIPART_FORM_DATA_VALUE))
             .produces(Sets.newHashSet(MediaType.APPLICATION_JSON_VALUE))
-            .requestParameters(Lists.newArrayList(username, password))
+            .requestParameters(Arrays.asList(username, password))
             .build();
     // 3.每个接口路径对应一个 ApiDescription
     ApiDescription loginApi =
         new ApiDescription(
-            null, "/api/login", null, "登录", Lists.newArrayList(loginOperation), false);
+            null, "/api/login", null, "登录", Arrays.asList(loginOperation), false);
 
     // 登出接口
     Operation logoutOperation =
@@ -56,11 +56,11 @@ public class SwaggerAddition implements ApiListingScannerPlugin {
             .build();
     ApiDescription logoutApi =
         new ApiDescription(
-            null, "/api/logout", null, "注销", Lists.newArrayList(logoutOperation), false);
+            null, "/api/logout", null, "注销", Arrays.asList(logoutOperation), false);
 
     context.getTags().add(new Tag("登录认证接口", "登录、登出、验证码..."));
 
-    return Lists.newArrayList(loginApi, logoutApi);
+    return Arrays.asList(loginApi, logoutApi);
   }
 
   @Override

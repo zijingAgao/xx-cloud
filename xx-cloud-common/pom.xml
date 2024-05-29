@@ -19,6 +19,7 @@
         <module>xx-cloud-kafka</module>
         <module>xx-cloud-ws-diy</module>
         <module>xx-cloud-mongo</module>
+        <module>xx-cloud-swagger</module>
     </modules>
 
 </project>

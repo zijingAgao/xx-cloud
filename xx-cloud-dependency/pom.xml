@@ -26,6 +26,8 @@
         <hutool-all.version>5.8.26</hutool-all.version>
         <kafka.version>2.8.11</kafka.version>
         <user-agent-utils.version>1.20</user-agent-utils.version>
+        <oauth.version>2.5.2.RELEASE</oauth.version>
+        <spring-boot-admin.version>2.6.11</spring-boot-admin.version>
         <revision>1.0.0</revision>
     </properties>
 
@@ -103,6 +105,7 @@
                 <artifactId>mybatis-plus-boot-starter</artifactId>
                 <version>${mybatis-plus.version}</version>
             </dependency>
+            <!--hutool-->
             <dependency>
                 <groupId>cn.hutool</groupId>
                 <artifactId>hutool-all</artifactId>
@@ -113,15 +116,34 @@
                 <artifactId>hutool-system</artifactId>
                 <version>${hutool-all.version}</version>
             </dependency>
+            <!--kafka-->
             <dependency>
                 <groupId>org.springframework.kafka</groupId>
                 <artifactId>spring-kafka</artifactId>
                 <version>${kafka.version}</version>
             </dependency>
+            <!--读取浏览器信息-->
             <dependency>
                 <groupId>eu.bitwalker</groupId>
                 <artifactId>UserAgentUtils</artifactId>
                 <version>${user-agent-utils.version}</version>
+            </dependency>
+            <!--oauth-->
+            <dependency>
+                <groupId>org.springframework.security.oauth</groupId>
+                <artifactId>spring-security-oauth2</artifactId>
+                <version>${oauth.version}</version>
+            </dependency>
+            <!--spring-admin-->
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-starter-server</artifactId>
+                <version>${spring-boot-admin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-starter-client</artifactId>
+                <version>${spring-boot-admin.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

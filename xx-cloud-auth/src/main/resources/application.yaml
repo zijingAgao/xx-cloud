@@ -1,9 +1,20 @@
+server:
+  port: 9011
+
+
 spring:
+  application:
+    name: xx-cloud-auth
+
   data:
     mongodb:
       host: 127.0.0.1
       port: 27017
       database: xx-cloud
+
+  redis:
+    host: localhost
+    port: 6379
 
   rabbitmq:
     host: 127.0.0.1
@@ -33,6 +44,24 @@ spring:
         username: admin
         password: admin
 
-xx-cloud:
-  swagger:
-    enable: true
+  boot:
+    admin:
+      client:
+        url: http://localhost:9012
+        instance:
+          service-url: http://localhost:9011
+          prefer-ip: true
+          name: xx-cloud-auth
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+  endpoint:
+    health:
+      show-details: ALWAYS
+
+

@@ -14,15 +14,14 @@
         <module>xx-cloud-admin</module>
         <module>xx-cloud-infra</module>
         <module>xx-cloud-gateway</module>
-        <module>xx-cloud-user</module>
         <module>xx-cloud-register</module>
         <module>xxl-job-executor</module>
         <module>xxl-job-admin</module>
-        <module>xx-cloud-order</module>
         <module>xx-cloud-dependency</module>
         <module>xx-cloud-common</module>
-        <module>xx-cloud-util</module>
-
+        <module>xx-cloud-base</module>
+        <module>xx-cloud-auth</module>
+        <module>xx-cloud-business</module>
     </modules>
 
     <properties>

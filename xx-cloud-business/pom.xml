@@ -6,10 +6,13 @@
         <artifactId>xx-cloud</artifactId>
         <version>${revision}</version>
     </parent>
-    <artifactId>xx-cloud-util</artifactId>
-    <name>xx-cloud-util</name>
+    <artifactId>xx-cloud-business</artifactId>
+    <name>xx-cloud-business</name>
+    <packaging>pom</packaging>
 
-    <dependencies>
+    <modules>
+        <module>xx-cloud-order</module>
+        <module>xx-cloud-user</module>
+    </modules>
 
-    </dependencies>
 </project>

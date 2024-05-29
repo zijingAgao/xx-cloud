@@ -1,17 +1,15 @@
 package com.xx;
 
-import de.codecentric.boot.admin.server.config.EnableAdminServer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * @author Agao
- * @date 2024/3/12 19:51
+ * @date 2024/5/29 10:42
  */
-@EnableAdminServer
 @SpringBootApplication
-public class AdminApplication {
+public class OAuthApplication {
   public static void main(String[] args) {
-    SpringApplication.run(AdminApplication.class, args);
+    SpringApplication.run(OAuthApplication.class, args);
   }
 }
