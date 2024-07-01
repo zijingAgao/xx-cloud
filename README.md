@@ -13,6 +13,7 @@
 - Swagger 3.0.0
 - RabbitMQ 死信队列
 - XXL-Job 定时任务
+- WebSocket 简易版本 和 diy版本
 
 ### 整合的功能点
 - Nacos服务注册与发现
@@ -23,3 +24,7 @@
 - XXL-Job 定时任务
 - Redis缓存，分布式锁
 - Ip寻址-awdb
+- diy webSocket 在ws的基础上包裹一层，实现自己的业务，例如业务上子链接
+- AOP+自定义注解接口限流
+- AOP+自定义注解接口防重复提交
+- AOP+自定义注解接口防抖
