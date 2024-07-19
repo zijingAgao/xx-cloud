@@ -20,6 +20,7 @@
         <module>xx-cloud-ws-diy</module>
         <module>xx-cloud-mongo</module>
         <module>xx-cloud-swagger</module>
+        <module>xx-cloud-stream</module>
         <module>xx-cloud-event-bus</module>
     </modules>
 

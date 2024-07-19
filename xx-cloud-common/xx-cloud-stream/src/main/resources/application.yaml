@@ -1,0 +1,38 @@
+server:
+  port: 9012
+
+
+
+spring:
+  cloud:
+    function:
+#     配置那些bean是可以被stream使用的
+      definition: emailMsg;shortMsg
+    stream:
+#      input-bindings: emailMsg-in;shortMsg-in
+#      output-bindings: emailMsg-out;shortMsg-out
+
+      bindings:
+        emailMsg-in-0:
+          destination: email-exchange
+          content-type: application/json
+          binder: local-rabbitmq
+#         多个生产者实例
+          group: email-queue
+        shortMsg-in-0:
+          destination: shortMsg-exchange
+          content-type: application/json
+          binder: local-rabbitmq
+#         多个消费者实例，避免重复消费，也是队列名字
+          group: shortMsg-queue
+      binders:
+        local-rabbitmq:
+          type: rabbit
+          environment:
+            spring:
+              rabbitmq:
+                host: localhost
+                port: 5672
+                username: agao
+                password: agao
+
