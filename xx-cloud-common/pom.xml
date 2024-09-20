@@ -22,6 +22,8 @@
         <module>xx-cloud-swagger</module>
         <module>xx-cloud-stream</module>
         <module>xx-cloud-event-bus</module>
+        <module>xx-cloud-mybatis-plus</module>
+        <module>xx-cloud-multi-datasource</module>
     </modules>
 
 </project>

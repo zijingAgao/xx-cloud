@@ -20,8 +20,12 @@
         <swagger.version>3.0.0</swagger.version>
         <knife4j.version>3.0.2</knife4j.version>
         <xxl-job.version>2.4.0</xxl-job.version>
+        <druid.version>1.2.23</druid.version>
         <mysql-java.version>8.0.33</mysql-java.version>
+        <mybatis-boot.version>2.3.2</mybatis-boot.version>
         <mybatis-plus.version>3.3.2</mybatis-plus.version>
+        <dynamic-datasource.version>4.3.0</dynamic-datasource.version>
+        <mybatis-plus-join.version>1.4.10</mybatis-plus-join.version>
         <flatten-maven-plugin.version>1.5.0</flatten-maven-plugin.version>
         <hutool-all.version>5.8.26</hutool-all.version>
         <kafka.version>2.8.11</kafka.version>
@@ -93,17 +97,39 @@
                 <artifactId>xxl-job-core</artifactId>
                 <version>${xxl-job.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
             <!--mysql-->
             <dependency>
                 <groupId>com.mysql</groupId>
                 <artifactId>mysql-connector-j</artifactId>
                 <version>${mysql-java.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis-boot.version}</version>
+            </dependency>
             <!--mybatis-plus -->
             <dependency>
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-boot-starter</artifactId>
                 <version>${mybatis-plus.version}</version>
+            </dependency>
+            <!-- 多数据源 -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
+                <version>${dynamic-datasource.version}</version>
+            </dependency>
+            <!-- MyBatis 联表查询 -->
+            <dependency>
+                <groupId>com.github.yulichang</groupId>
+                <artifactId>mybatis-plus-join-boot-starter</artifactId>
+                <version>${mybatis-plus-join.version}</version>
             </dependency>
             <!--hutool-->
             <dependency>

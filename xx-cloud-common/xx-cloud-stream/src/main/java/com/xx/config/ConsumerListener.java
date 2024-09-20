@@ -3,6 +3,7 @@ package com.xx.config;
 import com.xx.pojo.Person;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.function.Consumer;
 
@@ -19,6 +20,7 @@ public class ConsumerListener {
    * @return
    */
   @Bean
+  @Transactional
   public Consumer<Person> emailMsg() {
     return person -> System.out.println("Received: " + person);
   }

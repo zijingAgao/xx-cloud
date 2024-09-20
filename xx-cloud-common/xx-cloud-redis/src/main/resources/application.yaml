@@ -1,8 +1,0 @@
-server:
-  port: 9008
-
-
-spring:
-  redis:
-    host: localhost
-    port: 6379
