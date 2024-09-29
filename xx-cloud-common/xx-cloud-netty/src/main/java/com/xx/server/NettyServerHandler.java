@@ -79,7 +79,7 @@ public class NettyServerHandler extends ChannelInboundHandlerAdapter {
             CHANNEL_MAP.size());
       }
     } catch (Exception e) {
-      log.error("channelInactive error:" + e.fillInStackTrace());
+      log.error("channelInactive error:", e);
     }
   }
 
