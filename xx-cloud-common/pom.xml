@@ -25,6 +25,7 @@
         <module>xx-cloud-mybatis-plus</module>
         <module>xx-cloud-multi-datasource</module>
         <module>xx-cloud-access-limit</module>
+        <module>xx-cloud-netty</module>
     </modules>
 
 </project>

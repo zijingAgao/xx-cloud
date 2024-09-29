@@ -34,6 +34,7 @@
         <spring-boot-admin.version>2.6.11</spring-boot-admin.version>
         <easyexcel.version>4.0.3</easyexcel.version>
         <itextpdf.version>8.0.2</itextpdf.version>
+        <netty.version>4.1.42.Final</netty.version>
         <revision>1.0.0</revision>
     </properties>
 
@@ -192,6 +193,14 @@
                 <artifactId>bouncy-castle-adapter</artifactId>
                 <version>${itextpdf.version}</version>
             </dependency>
+
+            <!-- https://mvnrepository.com/artifact/io.netty/netty-all -->
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-all</artifactId>
+                <version>${netty.version}</version>
+            </dependency>
+
 
         </dependencies>
     </dependencyManagement>
