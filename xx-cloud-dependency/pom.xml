@@ -32,6 +32,8 @@
         <user-agent-utils.version>1.20</user-agent-utils.version>
         <oauth.version>2.5.2.RELEASE</oauth.version>
         <spring-boot-admin.version>2.6.11</spring-boot-admin.version>
+        <easyexcel.version>4.0.3</easyexcel.version>
+        <itextpdf.version>8.0.2</itextpdf.version>
         <revision>1.0.0</revision>
     </properties>
 
@@ -171,6 +173,26 @@
                 <artifactId>spring-boot-admin-starter-client</artifactId>
                 <version>${spring-boot-admin.version}</version>
             </dependency>
+            <!--easyExcel-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>easyexcel</artifactId>
+                <version>${easyexcel.version}</version>
+            </dependency>
+
+            <!-- itext-pdf -->
+            <dependency>
+                <groupId>com.itextpdf</groupId>
+                <artifactId>itext-core</artifactId>
+                <version>${itextpdf.version}</version>
+                <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>com.itextpdf</groupId>
+                <artifactId>bouncy-castle-adapter</artifactId>
+                <version>${itextpdf.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 

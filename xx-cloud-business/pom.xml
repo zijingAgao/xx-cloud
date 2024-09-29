@@ -13,6 +13,7 @@
     <modules>
         <module>xx-cloud-order</module>
         <module>xx-cloud-user</module>
+        <module>xx-cloud-import-export</module>
     </modules>
 
 </project>

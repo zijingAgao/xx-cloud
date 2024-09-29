@@ -24,6 +24,7 @@
         <module>xx-cloud-event-bus</module>
         <module>xx-cloud-mybatis-plus</module>
         <module>xx-cloud-multi-datasource</module>
+        <module>xx-cloud-access-limit</module>
     </modules>
 
 </project>

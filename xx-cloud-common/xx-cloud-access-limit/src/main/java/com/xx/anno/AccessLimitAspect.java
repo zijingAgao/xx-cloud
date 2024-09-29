@@ -1,7 +1,8 @@
 package com.xx.anno;
 
 import com.xx.constant.Const;
-import com.xx.resp.R;
+import java.time.Duration;
+import javax.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -13,10 +14,6 @@ import org.redisson.api.RedissonClient;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
-
-import javax.servlet.http.HttpServletResponse;
-import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 /**
  * 重复提交注解切面
