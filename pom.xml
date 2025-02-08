@@ -23,6 +23,7 @@
         <module>xx-cloud-auth</module>
         <module>xx-cloud-business</module>
         <module>xx-cloud-application</module>
+        <module>xx-cloud-util</module>
     </modules>
 
     <properties>
