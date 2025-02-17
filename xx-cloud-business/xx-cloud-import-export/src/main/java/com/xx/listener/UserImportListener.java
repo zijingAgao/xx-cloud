@@ -27,7 +27,6 @@ public class UserImportListener implements ReadListener<UserVo> {
   private static final int BATCH_COUNT = 10000;
   private final ThreadPoolExecutor threadPoolExecutor;
   private final UserService userService;
-
   @Override
   public void invoke(UserVo user, AnalysisContext analysisContext) {
     // TODO: 参数校验

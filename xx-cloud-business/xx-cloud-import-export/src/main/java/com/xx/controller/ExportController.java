@@ -22,4 +22,9 @@ public class ExportController {
   public void export(HttpServletResponse resp) {
     userService.exportUser(resp);
   }
+
+  @GetMapping("/api/batchExport")
+  public void batchExport() {
+    userService.batchExportUserSheet();
+  }
 }

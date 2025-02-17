@@ -1,7 +1,7 @@
 package com.xx;
 
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 
 /**
  * @author Agao
@@ -10,7 +10,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class ImportExportApplication {
   public static void main(String[] args) {
-    SpringApplication.run(ImportExportApplication.class, args);
+//    SpringApplication.run(ImportExportApplication.class, args);
+    new SpringApplicationBuilder()
+            .sources(ImportExportApplication.class)
+//            .main(ImportExportApplication.class)
+            .allowCircularReferences(true)
+            .properties("application.yaml").run(args);
   }
 
 }

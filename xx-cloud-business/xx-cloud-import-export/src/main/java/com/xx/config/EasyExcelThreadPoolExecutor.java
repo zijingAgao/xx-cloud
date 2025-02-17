@@ -10,10 +10,10 @@ import org.springframework.context.annotation.Configuration;
 public class EasyExcelThreadPoolExecutor {
 
   @Bean(name = "easyExcelThreadPool")
-  public ThreadPoolExecutor easyExcelStudentImportThreadPool() {
+  public ThreadPoolExecutor easyExcelThreadPool() {
     return new ThreadPoolExecutor(
-        4,
-        8,
+        10,
+        20,
         60L,
         TimeUnit.SECONDS,
         new LinkedBlockingQueue<>(10000),
