@@ -5,9 +5,6 @@ import com.xx.constant.Const;
 import com.xx.exception.BizException;
 import com.xx.util.IpAddressUtils;
 import io.micrometer.core.instrument.util.StringUtils;
-import java.util.concurrent.TimeUnit;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -19,6 +16,10 @@ import org.redisson.api.RedissonClient;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.util.concurrent.TimeUnit;
 
 /**
  * 防重复提交切面
@@ -67,8 +68,7 @@ public class RepeatSubmitAspect {
       String key =
           businessId
               + Const.REPEAT_SUBMIT_KEY_PARAM
-              + SecureUtil.md5()
-                  .digestHex(String.format("%s-%s-%s-%s", ip, clazzName, methodName, businessId));
+              + SecureUtil.md5().digestHex(String.format("%s-%s-%s-%s", ip, clazzName, methodName, businessId));
 
       RLock lock = redissonClient.getLock(key);
       // 尝试获取锁，等待0s，超时后自动过期释放，不手动释放，以达到短时间内防止重复提交的目的

@@ -6,23 +6,18 @@
         <artifactId>xx-cloud-common</artifactId>
         <version>1.0.0</version>
     </parent>
-    <artifactId>xx-cloud-ws</artifactId>
-    <name>xx-cloud-ws</name>
+    <artifactId>xx-cloud-responsibility-chain</artifactId>
+    <name>xx-cloud-responsibility-chain</name>
 
 
     <dependencies>
         <dependency>
-            <groupId>com.xx</groupId>
-            <artifactId>xx-cloud-kafka</artifactId>
-            <version>1.0.0</version>
-        </dependency>
-        <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-websocket</artifactId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.redisson</groupId>
-            <artifactId>redisson-spring-boot-starter</artifactId>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
         </dependency>
     </dependencies>
 </project>

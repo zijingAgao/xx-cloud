@@ -6,7 +6,7 @@
     <parent>
         <groupId>com.xx</groupId>
         <artifactId>xx-cloud-order</artifactId>
-        <version>${revision}</version>
+        <version>1.0.0</version>
     </parent>
 
     <artifactId>order-web</artifactId>
@@ -22,7 +22,7 @@
         <dependency>
             <groupId>com.xx</groupId>
             <artifactId>order-feign</artifactId>
-            <version>${revision}</version>
+            <version>1.0.0</version>
         </dependency>
     </dependencies>
 

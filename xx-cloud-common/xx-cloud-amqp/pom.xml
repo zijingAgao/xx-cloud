@@ -6,7 +6,7 @@
     <parent>
         <groupId>com.xx</groupId>
         <artifactId>xx-cloud-common</artifactId>
-        <version>${revision}</version>
+        <version>1.0.0</version>
     </parent>
 
     <artifactId>xx-cloud-amqp</artifactId>

@@ -5,7 +5,7 @@
     <groupId>com.xx</groupId>
     <artifactId>xx-cloud-dependency</artifactId>
     <name>xx-cloud-dependency</name>
-    <version>${revision}</version>
+    <version>1.0.0</version>
     <packaging>pom</packaging>
 
     <properties>

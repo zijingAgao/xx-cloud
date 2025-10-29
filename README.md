@@ -28,3 +28,4 @@
 - AOP+自定义注解接口限流
 - AOP+自定义注解接口防重复提交
 - AOP+自定义注解接口防抖
+- 责任链模式 xx-cloud-responsibility-chain

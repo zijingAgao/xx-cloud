@@ -6,7 +6,7 @@
     <parent>
         <groupId>com.xx</groupId>
         <artifactId>xx-cloud-ip-addr</artifactId>
-        <version>${revision}</version>
+        <version>1.0.0</version>
     </parent>
 
     <artifactId>ip-addr-api</artifactId>
