@@ -36,6 +36,7 @@
         <itextpdf.version>8.0.2</itextpdf.version>
         <netty.version>4.1.42.Final</netty.version>
         <cglib.version>3.3.0</cglib.version>
+        <fastjson2.version>2.0.50</fastjson2.version>
         <revision>1.0.0</revision>
     </properties>
 
@@ -209,6 +210,11 @@
                 <scope>compile</scope>
             </dependency>
 
+            <dependency>
+                <groupId>com.alibaba.fastjson2</groupId>
+                <artifactId>fastjson2</artifactId>
+                <version>${fastjson2.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
