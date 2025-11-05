@@ -8,14 +8,14 @@ import com.xx.idempotent.handler.token.IdempotentTokenExecuteHandler;
 import com.xx.idempotent.handler.token.IdempotentTokenService;
 import org.redisson.api.RedissonClient;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
 /**
  * @author Agao
  * @date 2025/11/4 17:05
  */
-@Configuration
+@EnableConfigurationProperties(IdempotentProperties.class)
 public class IdempotentAutoConfiguration {
 
     @Bean
@@ -35,6 +35,7 @@ public class IdempotentAutoConfiguration {
     }
 
     @Bean
+    @ConditionalOnMissingBean
     public IdempotentTokenController idempotentTokenController(IdempotentTokenService idempotentTokenService) {
         return new IdempotentTokenController(idempotentTokenService);
     }

@@ -2,10 +2,10 @@ package com.xx.idempotent.handler.param;
 
 import cn.hutool.crypto.digest.DigestUtil;
 import com.alibaba.fastjson2.JSON;
-import com.xx.exception.BizException;
 import com.xx.idempotent.IdempotentParamWrapper;
 import com.xx.idempotent.aspect.Idempotent;
 import com.xx.idempotent.context.IdempotentContext;
+import com.xx.idempotent.exception.IdempotentException;
 import com.xx.idempotent.handler.AbstractIdempotentExecuteHandler;
 import lombok.RequiredArgsConstructor;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -30,18 +30,35 @@ public class IdempotentParamExecuteHandler extends AbstractIdempotentExecuteHand
      * threadLocal中当前线程 分布式锁的key
      */
     private final static String LOCK = "lock:param:restAPI";
+    private final static String AUTH_TOKEN_KEY = "Authorization";
 
     @Override
     protected IdempotentParamWrapper buildWrapper(ProceedingJoinPoint joinPoint) {
 
-        String lockKey = String.format("idempotent:path:%s:currentUserId:%s:md5:%s", getServletPath(), getCurrentUserId(), calcArgsMD5(joinPoint));
+        String lockKey = String.format("idempotent:path:%s:currentUserId:%s:md5:%s:token:%s", getServletPath(), getCurrentUserId(), calcArgsMD5(joinPoint), getAccessToken());
         return IdempotentParamWrapper.builder().lockKey(lockKey).joinPoint(joinPoint).build();
     }
 
+    /**
+     * TODO: 获取当前登录的用户id
+     *
+     * @return
+     */
     private String getCurrentUserId() {
-        // TODO: 获取当前登录的用户id
-
         return "1001";
+    }
+
+    /**
+     * TODO: 获取当前登录用户的执行token
+     *
+     * @return
+     */
+    private String getAccessToken() {
+        ServletRequestAttributes reqAttr = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
+        HttpServletRequest req = reqAttr.getRequest();
+
+        String token = req.getHeader(AUTH_TOKEN_KEY);
+        return "Bearer eyJhbGciOiJIUzUxMiJ9";
     }
 
     /**
@@ -70,7 +87,7 @@ public class IdempotentParamExecuteHandler extends AbstractIdempotentExecuteHand
 
         RLock lock = redissonClient.getLock(lockKey);
         if (!lock.tryLock()) {
-            throw new BizException(idempotent.message());
+            throw new IdempotentException(idempotent.message());
         }
 
         IdempotentContext.put(LOCK, lock);

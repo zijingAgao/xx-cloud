@@ -1,7 +1,7 @@
 package com.xx.idempotent.handler.token;
 
-import com.xx.exception.BizException;
 import com.xx.idempotent.IdempotentParamWrapper;
+import com.xx.idempotent.exception.IdempotentException;
 import com.xx.idempotent.handler.AbstractIdempotentExecuteHandler;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -49,11 +49,11 @@ public class IdempotentTokenExecuteHandler extends AbstractIdempotentExecuteHand
         HttpServletRequest request = reqAttr.getRequest();
         String token = request.getHeader(TOKEN_KEY);
         if (!StringUtils.hasText(token)) {
-            throw new BizException("幂等Token为空");
+            throw new IdempotentException("幂等Token为空");
         }
         RBucket<Object> bucket = redissonClient.getBucket(token);
         if (!bucket.delete()) {
-            throw new BizException("幂等Token已被使用或失效");
+            throw new IdempotentException("幂等Token已被使用或失效");
         }
     }
 

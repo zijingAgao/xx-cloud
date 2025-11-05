@@ -24,13 +24,6 @@ public @interface Idempotent {
     IdempotentType type() default IdempotentType.PARAM;
 
     /**
-     * 防重复提交锁的过期时间，第一次请求之后的5秒内，相同的请求将被视为重复并被阻止 只对PARAM类型生效
-     *
-     * @return 重复请求的过期时间 单位 毫秒
-     */
-    long lockExpire() default 2000L;
-
-    /**
      * 重复提交提示信息
      *
      * @return message
